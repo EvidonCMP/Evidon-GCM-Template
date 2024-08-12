@@ -1,4 +1,3 @@
-
 ___TERMS_OF_SERVICE___
 
 By creating or modifying this file you agree to Google Tag Manager's Community

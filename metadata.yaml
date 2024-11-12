@@ -3,7 +3,7 @@ documentation: "https://developer.crownpeak.com/Documentation/UCP/Prior-Consent/
 versions:
 # Latest version
   - sha: acb394e3fdd6b814e2f9f5090fd594bd91ae424c
-    changeNotes:  Updated .tpl file
+    changeNotes:  Updated tpl file
   # Older versions
    - sha: acb394e3fdd6b814e2f9f5090fd594bd91ae424c
      changeNotes: Initial release.

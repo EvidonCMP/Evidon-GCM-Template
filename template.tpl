@@ -368,7 +368,7 @@ var url = "https://c.evidon.com";
 if(companyId == 7654 || companyId == 6914) url = "https://staging.betrad.com";
 
 
-const evidonSiteNoticeTag = url + "/gtm/evidon-sitenotice-tag.js";
+const evidonSiteNoticeTag = url + "/sitenotice/evidon-sitenotice-tag.js";
 const country = url + "/geo/country.js";
 const snThemes = url+ "/sitenotice/" + companyId + "/snthemes.js";
 const settingsV3 = url + "/sitenotice/" + companyId + "/" + domain + "/settingsV3.js";
@@ -495,7 +495,7 @@ function setDefaultConsent() {
 }
 
 const updateGoogleConsent = (evidonConsentState) => {
-    if(data.advancedMode) 
+    if(!data.advancedMode) 
           setDefaultConsentState({
             'ad_storage': 'denied',
             'analytics_storage': 'denied',

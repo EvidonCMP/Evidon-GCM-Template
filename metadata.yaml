@@ -1,5 +1,5 @@
 homepage: "https://www.crownpeak.com"
 documentation: "https://developer.crownpeak.com/Documentation/UCP/Prior-Consent/Google-Tag-Manager-Integration.html"
 versions:
-  - sha: f9996b748bb583932ff1d7ed34b1aa327119d513
+  - sha: 364d9cd868cca96a003c586d2bde771bbea3cab9
     changeNotes: Initial release.

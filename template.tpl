@@ -55,7 +55,8 @@ ___TEMPLATE_PARAMETERS___
     "type": "CHECKBOX",
     "name": "enableDebugMode",
     "checkboxText": "Enabled Debug Mode",
-    "simpleValueType": true
+    "simpleValueType": true,
+    "help": "Debug mode will log the user\u0027s consent state to browser\u0027s console."
   },
   {
     "type": "CHECKBOX",
@@ -65,285 +66,372 @@ ___TEMPLATE_PARAMETERS___
     "defaultValue": true
   },
   {
-    "type": "SELECT",
-    "name": "adStorage",
-    "displayName": "Ad Storage",
-    "selectItems": [
-      {
-        "value": "denied",
-        "displayValue": "Denied"
-      },
-      {
-        "value": "granted",
-        "displayValue": "Granted"
-      }
-    ],
+    "type": "CHECKBOX",
+    "name": "nonProductionNotice",
+    "checkboxText": "Non Production Notice",
     "simpleValueType": true,
-    "valueValidators": [
-      {
-        "type": "NON_EMPTY"
-      }
-    ]
+    "defaultValue": false
   },
   {
     "type": "SELECT",
-    "name": "analyticsStorage",
-    "displayName": "Analytics Storage",
+    "name": "activeTranslationsLangCode",
+    "displayName": "Override Language Code",
+    "macrosInSelect": false,
     "selectItems": [
       {
-        "value": "denied",
-        "displayValue": "Denied"
+        "value": "ar",
+        "displayValue": "Arabic (ar)"
       },
       {
-        "value": "granted",
-        "displayValue": "Granted"
+        "value": "hy",
+        "displayValue": "Armenian (hy)"
+      },
+      {
+        "value": "de-at",
+        "displayValue": "Austrian German (de-at)"
+      },
+      {
+        "value": "az",
+        "displayValue": "Azerbaijani (az)"
+      },
+      {
+        "value": "bn",
+        "displayValue": "Bengali (bn)"
+      },
+      {
+        "value": "bs",
+        "displayValue": "Bosnian (bs)"
+      },
+      {
+        "value": "bg",
+        "displayValue": "Bulgarian (bg)"
+      },
+      {
+        "value": "en-ca",
+        "displayValue": "Canadian English (en-ca)"
+      },
+      {
+        "value": "fr-ca",
+        "displayValue": "Canadian French (fr-ca)"
+      },
+      {
+        "value": "ca",
+        "displayValue": "Catalan (ca)"
+      },
+      {
+        "value": "hr",
+        "displayValue": "Croatian (hr)"
+      },
+      {
+        "value": "cs",
+        "displayValue": "Czech (cs)"
+      },
+      {
+        "value": "da",
+        "displayValue": "Danish (da)"
+      },
+      {
+        "value": "nl",
+        "displayValue": "Dutch (nl)"
+      },
+      {
+        "value": "ar-eg",
+        "displayValue": "Egyptian Arabic (ar-eg)"
+      },
+      {
+        "value": "en-gb",
+        "displayValue": "English (en-gb)"
+      },
+      {
+        "value": "en-us",
+        "displayValue": "English (en-us)"
+      },
+      {
+        "value": "et",
+        "displayValue": "Estonian (et)"
+      },
+      {
+        "value": "fi",
+        "displayValue": "Finnish (fi)"
+      },
+      {
+        "value": "nl-be",
+        "displayValue": "Flemish (nl-be)"
+      },
+      {
+        "value": "fr",
+        "displayValue": "French (fr)"
+      },
+      {
+        "value": "ka",
+        "displayValue": "Georgian (ka)"
+      },
+      {
+        "value": "de",
+        "displayValue": "German (de)"
+      },
+      {
+        "value": "el",
+        "displayValue": "Greek (el)"
+      },
+      {
+        "value": "he",
+        "displayValue": "Hebrew (he)"
+      },
+      {
+        "value": "hi",
+        "displayValue": "Hindi (hi)"
+      },
+      {
+        "value": "hu",
+        "displayValue": "Hungarian (hu)"
+      },
+      {
+        "value": "is",
+        "displayValue": "Icelandic (is)"
+      },
+      {
+        "value": "id",
+        "displayValue": "Indonesian (id)"
+      },
+      {
+        "value": "it",
+        "displayValue": "Italian (it)"
+      },
+      {
+        "value": "ja",
+        "displayValue": "Japanese (ja)"
+      },
+      {
+        "value": "ko",
+        "displayValue": "Korean (ko)"
+      },
+      {
+        "value": "lv",
+        "displayValue": "Latvian (lv)"
+      },
+      {
+        "value": "lt",
+        "displayValue": "Lithuanian (lt)"
+      },
+      {
+        "value": "mk",
+        "displayValue": "Macedonian (mk)"
+      },
+      {
+        "value": "ms",
+        "displayValue": "Malay (ms)"
+      },
+      {
+        "value": "mt",
+        "displayValue": "Maltese (mt)"
+      },
+      {
+        "value": "no",
+        "displayValue": "Norwegian (no)"
+      },
+      {
+        "value": "pl",
+        "displayValue": "Polish (pl)"
+      },
+      {
+        "value": "pt",
+        "displayValue": "Portuguese (pt)"
+      },
+      {
+        "value": "pt-br",
+        "displayValue": "Portuguese Brazil (pt-br)"
+      },
+      {
+        "value": "ro",
+        "displayValue": "Romanian (ro)"
+      },
+      {
+        "value": "ru",
+        "displayValue": "Russian (ru)"
+      },
+      {
+        "value": "sr",
+        "displayValue": "Serbian (sr)"
+      },
+      {
+        "value": "zh-cn",
+        "displayValue": "Simplified Chinese (zh-cn)"
+      },
+      {
+        "value": "sk",
+        "displayValue": "Slovak (sk)"
+      },
+      {
+        "value": "sl",
+        "displayValue": "Slovenian (sl)"
+      },
+      {
+        "value": "es",
+        "displayValue": "Spanish (es)"
+      },
+      {
+        "value": "es-us",
+        "displayValue": "Spanish (es-us)"
+      },
+      {
+        "value": "es-ar",
+        "displayValue": "Spanish Argentina (es-ar)"
+      },
+      {
+        "value": "sv",
+        "displayValue": "Swedish (sv)"
+      },
+      {
+        "value": "fr-ch",
+        "displayValue": "Swiss French (fr-ch)"
+      },
+      {
+        "value": "de-ch",
+        "displayValue": "Swiss German (de-ch)"
+      },
+      {
+        "value": "ph",
+        "displayValue": "Tagalog (ph)"
+      },
+      {
+        "value": "th",
+        "displayValue": "Thai (th)"
+      },
+      {
+        "value": "zh-tw",
+        "displayValue": "Traditional Chinese (zh-tw)"
+      },
+      {
+        "value": "tr",
+        "displayValue": "Turkish (tr)"
+      },
+      {
+        "value": "uk",
+        "displayValue": "Ukranian (uk)"
+      },
+      {
+        "value": "vi",
+        "displayValue": "Vietnamese (vi)"
       }
     ],
     "simpleValueType": true,
-    "valueValidators": [
-      {
-        "type": "NON_EMPTY"
-      }
-    ]
+    "notSetText": "Default Language",
+    "help": "This option allows you to override the default language set in the notice or detected by the user\u0027s browser, enabling the notice banner or barrier to be displayed in the selected language."
   },
   {
-    "type": "SELECT",
-    "name": "adPersonalization",
-    "displayName": "Ad Personalization",
-    "selectItems": [
+    "type": "GROUP",
+    "name": "defaultConsent",
+    "displayName": "Default Consent State",
+    "groupStyle": "NO_ZIPPY",
+    "subParams": [
       {
-        "value": "denied",
-        "displayValue": "Denied"
-      },
-      {
-        "value": "granted",
-        "displayValue": "Granted"
-      }
-    ],
-    "simpleValueType": true,
-    "valueValidators": [
-      {
-        "type": "NON_EMPTY"
-      }
-    ]
-  },
-  {
-    "type": "SELECT",
-    "name": "adUserData",
-    "displayName": "Ad User Data",
-    "selectItems": [
-      {
-        "value": "denied",
-        "displayValue": "Denied"
-      },
-      {
-        "value": "granted",
-        "displayValue": "Granted"
-      }
-    ],
-    "simpleValueType": true,
-    "valueValidators": [
-      {
-        "type": "NON_EMPTY"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentGlobally",
-    "checkboxText": "Global Consent",
-    "simpleValueType": true,
-    "displayName": "Enables default consent Globally",
-    "help": "Enables default Google consent state globally.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentNorthAmerica",
-    "checkboxText": "North America",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for North America",
-    "help": "Enables default Google consent state for the following regions: US, CA, PM, MQ.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentEurope",
-    "checkboxText": "Europe",
-    "simpleValueType": true,
-    "displayName": "Enable default consent for Europe",
-    "help": "Enables default Google consent state for the following regions: DE, ES, FR, GB, IT, NL, DK, IE, PL, AT, BE, SE, SK, HU, FI, PT, CZ, LU, GR, BG, RO, EE, LV, LT, SI, MT, CY, HR, IM, JE, GI, BY.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentAsiaPacific",
-    "checkboxText": "Asia Pacific",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for Asia Pacific",
-    "help": "Enables default Google consent state for the following regions: CN, TW, KR, JP, AU, NZ, ID, MY, TH, IN, SG, HK, VN, AM, PH, LA, KH, NP, LK, MM, BN.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentMiddleEast",
-    "checkboxText": "Middle East",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for Middle East",
-    "help": "Enables default Google consent state for the following regions: IL, TR, EG, SA, LY, AE.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentEuropeNonEU",
-    "checkboxText": "Europe - Non EU",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for Europe - Non EU",
-    "help": "Enables default Google consent state for the following regions: RU, NO, CH, IS, MK, RS, UA, AL, BA, MD, GE, LI.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentSouthAmerica",
-    "checkboxText": "South America",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for South America",
-    "help": "Enables default Google consent state for the following regions: BR, AR, BO, CL, CO, EC, GY, PY, PE, SR, UY, VE, GF.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentOtherEU",
-    "checkboxText": "Other EU",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for Other EU",
-    "help": "Enables default Google consent state for the following regions: RE, GG, PF, WF, YT.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentAfrica",
-    "checkboxText": "Africa",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for Africa",
-    "help": "Enables default Google consent state for the following regions: ZA, DZ, NG, CG, CD, GA, MA, SN, TN, MU.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentCaribbean",
-    "checkboxText": "Caribbean",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for Caribbean",
-    "help": "Enables default Google consent state for the following regions: AI, AG, AW, BS, BB, BM, VG, KY, DM, DO, GD, HT, JM, AN, PR, KN, LC, VC, TT, TC, VI, GP, BL, MF.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "CHECKBOX",
-    "name": "defaultConsentCentralAmerica",
-    "checkboxText": "Central America",
-    "simpleValueType": true,
-    "displayName": "Enables default consent for Central America",
-    "help": "Enables default Google consent state for the following regions: MX, BZ, CR, SV, GT, HN, NI, PA.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
-  },
-  {
-    "type": "SIMPLE_TABLE",
-    "name": "userDefinedRegions",
-    "displayName": "",
-    "simpleTableColumns": [
-      {
-        "defaultValue": "",
-        "displayName": "Custom Regions",
-        "name": "region",
-        "type": "TEXT",
-        "valueValidators": [
+        "type": "PARAM_TABLE",
+        "name": "regionSettings",
+        "displayName": "",
+        "paramTableColumns": [
           {
-            "type": "STRING_LENGTH",
-            "args": [
-              2,
-              5
-            ]
+            "param": {
+              "type": "TEXT",
+              "name": "region",
+              "displayName": "Region (leave blank to apply globally)",
+              "simpleValueType": true,
+              "valueHint": "eg. us-ca, gb, fr"
+            },
+            "isUnique": true
+          },
+          {
+            "param": {
+              "type": "SELECT",
+              "name": "adStorage",
+              "displayName": "Ad Storage",
+              "macrosInSelect": false,
+              "selectItems": [
+                {
+                  "value": "granted",
+                  "displayValue": "granted"
+                },
+                {
+                  "value": "denied",
+                  "displayValue": "denied"
+                }
+              ],
+              "simpleValueType": true,
+              "help": "Allow advertising cookies before user gives consent",
+              "defaultValue": "denied"
+            },
+            "isUnique": false
+          },
+          {
+            "param": {
+              "type": "SELECT",
+              "name": "analyticsStorage",
+              "displayName": "Analytics Storage",
+              "macrosInSelect": false,
+              "selectItems": [
+                {
+                  "value": "granted",
+                  "displayValue": "granted"
+                },
+                {
+                  "value": "denied",
+                  "displayValue": "denied"
+                }
+              ],
+              "simpleValueType": true,
+              "defaultValue": "denied",
+              "help": "Allow analytics cookies before user gives consent"
+            },
+            "isUnique": false
+          },
+          {
+            "param": {
+              "type": "SELECT",
+              "name": "adPersonalization",
+              "displayName": "Ad Personalization",
+              "macrosInSelect": false,
+              "selectItems": [
+                {
+                  "value": "granted",
+                  "displayValue": "granted"
+                },
+                {
+                  "value": "denied",
+                  "displayValue": "denied"
+                }
+              ],
+              "simpleValueType": true,
+              "defaultValue": "denied",
+              "help": "Allow ads personalization before user gives consent"
+            },
+            "isUnique": false
+          },
+          {
+            "param": {
+              "type": "SELECT",
+              "name": "adUserData",
+              "displayName": "Ad User Data",
+              "macrosInSelect": false,
+              "selectItems": [
+                {
+                  "value": "granted",
+                  "displayValue": "granted"
+                },
+                {
+                  "value": "denied",
+                  "displayValue": "denied"
+                }
+              ],
+              "simpleValueType": true,
+              "defaultValue": "denied",
+              "help": "Allow sending user data to Google for advertising purposes before user gives consent"
+            },
+            "isUnique": false
           }
-        ],
-        "valueHint": "Please enter a valid ISO 3166-1 or ISO 3166-2 country code",
-        "isUnique": true
+        ]
       }
     ],
-    "help": "Enables default Google consent state for you own custom set of regions.",
-    "enablingConditions": [
-      {
-        "paramName": "advancedMode",
-        "paramValue": true,
-        "type": "EQUALS"
-      }
-    ]
+    "help": "A default consent state of \u0027denied\u0027 will apply until the user has submitted a consent. You can add different default states for users in different geographical regions. Please use ISO-3166-1 alpha-2 country codes for region values."
   }
 ]
 
@@ -352,6 +440,7 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
 /* --- Imports --- */
 const log = require('logToConsole');
+const encodeUriComponent = require('encodeUriComponent');
 const injectScript = require('injectScript');
 const setInWindow = require('setInWindow');
 const getUrl = require('getUrl');
@@ -361,98 +450,26 @@ const gtagSet = require('gtagSet');
 const updateConsentState = require('updateConsentState');
 const copyFromWindow = require("copyFromWindow");
 const companyId = data.companyId;
-const domain = getRootDomain();
 const callLater = require("callLater");
+const stagingNotice= data.nonProductionNotice;
+const activeTranslationsLangCode  = data.activeTranslationsLangCode ;
 
-var url = "https://c.evidon.com";
-if(companyId == 7654 || companyId == 6914) url = "https://staging.betrad.com";
-
-
-const evidonSiteNoticeTag = url + "/sitenotice/evidon-sitenotice-tag.js";
-const country = url + "/geo/country.js";
-const snThemes = url+ "/sitenotice/" + companyId + "/snthemes.js";
-const settingsV3 = url + "/sitenotice/" + companyId + "/" + domain + "/settingsV3.js";
-const debug = url + "/gtm/debug.js";
-
-const supportedRegions = {
-    northAmerica: ['US', 'CA', 'PM', 'MQ'],
-    europeEU: ['DE', 'ES', 'FR', 'GB', 'IT', 'NL', 'DK', 'IE', 'PL', 'AT', 'BE', 'SE', 'SK', 'HU', 'FI', 'PT', 'CZ', 'LU', 'GR', 'BG', 'RO', 'EE', 'LV', 'LT', 'SI', 'MT', 'CY', 'HR', 'IM', 'JE', 'GI', 'BY'],
-    asiaPacific: ['CN', 'TW', 'KR', 'JP', 'AU', 'NZ', 'ID', 'MY', 'TH', 'IN', 'SG', 'HK', 'VN', 'AM', 'PH', 'LA', 'KH', 'NP', 'LK', 'MM', 'BN'],
-    middleEast: ['IL', 'TR', 'EG', 'SA', 'LY', 'AE'],
-    europeNonEU: ['RU', 'NO', 'CH', 'IS', 'MK', 'RS', 'UA', 'AL', 'BA', 'MD', 'GE', 'LI'],
-    southAmerica: ['BR', 'AR', 'BO', 'CL', 'CO', 'EC', 'GY', 'PY', 'PE', 'SR', 'UY', 'VE', 'GF'],
-    otherEU: ['RE', 'GG', 'PF', 'WF', 'YT'],
-    africa: ['ZA', 'DZ', 'NG', 'CG', 'CD', 'GA', 'MA', 'SN', 'TN', 'MU'],
-    caribbean: ['AI', 'AG', 'AW', 'BS', 'BB', 'BM', 'VG', 'KY', 'DM', 'DO', 'GD', 'HT', 'JM', 'AN', 'PR', 'KN', 'LC', 'VC', 'TT', 'TC', 'VI', 'GP', 'BL', 'MF'],
-    centralAmerica: ['MX', 'BZ', 'CR', 'SV', 'GT', 'HN', 'NI', 'PA']
+/* --- Constants --- */
+const urls = {
+    production: "https://c.evidon.com",
+    staging: "https://staging.betrad.com",
 };
+const url = [7654, 6914].indexOf(data.companyId) !== -1 ? urls.staging : urls.production;
 
-function getRegions() {
-    var regions = [];
+const debug = url + "/gtm/debug.js";
+const evidonCDN = url + "/gtm/evidon-loader.js";
 
-    if (data.defaultConsentNorthAmerica)
-        regions = regions.concat(supportedRegions.northAmerica);
 
-    if (data.defaultConsentEurope)
-        regions = regions.concat(supportedRegions.europeEU);
-
-    if (data.defaultConsentAsiaPacific)
-        regions = regions.concat(supportedRegions.asiaPacific);
-
-    if (data.defaultConsentMiddleEast)
-        regions = regions.concat(supportedRegions.middleEast);
-
-    if (data.defaultConsentEuropeNonEU)
-        regions = regions.concat(supportedRegions.europeNonEU);
-
-    if (data.defaultConsentSouthAmerica)
-        regions = regions.concat(supportedRegions.southAmerica);
-
-    if (data.defaultConsentOtherEU)
-        regions = regions.concat(supportedRegions.otherEU);
-
-    if (data.defaultConsentAfrica)
-        regions = regions.concat(supportedRegions.africa);
-
-    if (data.defaultConsentCaribbean)
-        regions = regions.concat(supportedRegions.caribbean);
-
-    if (data.defaultConsentCentralAmerica)
-        regions = regions.concat(supportedRegions.centralAmerica);
-
-    if (data.userDefinedRegions !== undefined) {
-        for (var i = 0; i <= data.userDefinedRegions.length - 1; i++) {
-            regions = regions.concat([data.userDefinedRegions[i].region.toUpperCase()]);
-        }
-    }
-
-    return regions;
-}
-
-function is2parttld(value) {
-    var tldindicators = ['co', 'com', 'info', 'web', 'info', 'gov', 'edu', 'biz', 'net', 'org'];
-    var countryindicators = ['uk', 'us', 'fr', 'es', 'de', 'at', 'au', 'ae', 'be', 'br', 'ca', 'ch', 'cn', 'co', 'cz', 'dk', 'eg', 'eu', 'fi', 'gb', 'gr', 'hk', 'hr', 'hu', 'ie', 'in', 'jp', 'mx', 'nl', 'no', 'nz', 'pl', 'ro', 'ru', 'se'];
-    return (tldindicators.indexOf(value) !== -1 || countryindicators.indexOf(value) !== -1);
-}
-
-function getRootDomain() {
-    var parts;
-    var rootDomain = '';
-    parts = getUrl('host').split('.');
-    if (parts.length === 2)
-        rootDomain = parts[0];
-
-    else if (parts.length > 2) {
-        var part = parts[parts.length - 2];
-        if (is2parttld(part)) {
-            rootDomain = parts[parts.length - 3];
-        }
-        else {
-            rootDomain = part;
-        }
-    }
-    return rootDomain;
-}
+const splitInput = (input) => {
+  return input.split(',')
+    .map(entry => entry.trim())
+    .filter(entry => entry.length !== 0);
+};
 
 const onSucessDebug = () => {
   if(data.advancedMode){
@@ -461,79 +478,73 @@ const onSucessDebug = () => {
   }
 };
 
-
-
+const setDeniedConsentValuesForAllRegions = () => {
+    setDefaultConsentState({
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500,
+    });
+};
 
 
 function setDefaultConsent() {
-    const regions = getRegions();
-    gtagSet({ 'ads_data_redaction': true, 'developer_id': 'dOGRkZj' });
-
-    if (data.enableUrlPassthrough) {
-        gtagSet({ 'url_passthrough': true });
-    }
-    else {
-        gtagSet({ 'url_passthrough': false });
+    if (!data.regionSettings || data.regionSettings.length === 0) {
+        return setDeniedConsentValuesForAllRegions();
     }
 
-  
-    if(data.advancedMode){
-        var defaultConsentState = {
-            'ad_storage': data.adStorage,
-            'analytics_storage': data.analyticsStorage,
-            'ad_user_data': data.adUserData,
-            'ad_personalization': data.adPersonalization
+    let allRegionsRecord = false;
+    data.regionSettings.forEach(settings => {
+        const regions = splitInput(settings.region);
+        const consentState = {
+            ad_storage: settings.adStorage,
+            analytics_storage: settings.analyticsStorage,
+            ad_user_data: settings.adUserData,
+            ad_personalization: settings.adPersonalization,
+            wait_for_update: 500,
+            region: regions.length ? regions : undefined,
         };
+        if (!regions.length) allRegionsRecord = true;
+        setDefaultConsentState(consentState);
+    });
 
-        if(regions.length !== 0 && data.defaultConsentGlobally){ 
-            defaultConsentState.region = regions;
-        }
-  
-        setDefaultConsentState(defaultConsentState);
-    }
-    return;
+    if (!allRegionsRecord) setDeniedConsentValuesForAllRegions();
 }
 
 const updateGoogleConsent = (evidonConsentState) => {
-    if(!data.advancedMode) 
-          setDefaultConsentState({
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied'
-          });
-    
+    if(!data.advancedMode) {
+           setDeniedConsentValuesForAllRegions();
+    }
     updateConsentState(evidonConsentState);
     gtagSet({'ads_data_redaction': evidonConsentState.ad_Storage == 'granted' ? false : true});
     if(data.enableDebugMode) copyFromWindow("evidon.logConsentUpdate")();
 };
 
+
+/* --- Core Functions --- */
 function defineEvidonObject() {
     const companyId = data.companyId;
     setInWindow('evidon', [], true);
     setInWindow('evidon.id', makeInteger(companyId), true);
-    setInWindow('evidon.test', false, true);
+    setInWindow('evidon.test', stagingNotice, true);
     setInWindow('evidon.updateGoogleConsent', updateGoogleConsent);
-  
+    if(activeTranslationsLangCode != "Default Language")
+    {
+     setInWindow('evidon.activeTranslationsLangCode', activeTranslationsLangCode);
+    }
+
 }
 
-
 function injectEvidonScripts() {
-    injectScript(evidonSiteNoticeTag);
-    injectScript(country);
-    injectScript(snThemes);
-    injectScript(settingsV3);
+    injectScript(evidonCDN);
     if(data.enableDebugMode) injectScript(debug, onSucessDebug, ()=>{log("Debug Mode fails to load");}, "Debug Mode");
 }
 
-
-
-
+/* --- Initialization --- */
 setDefaultConsent();
 defineEvidonObject();
 injectEvidonScripts();
-
-
 data.gtmOnSuccess();
 
 
@@ -575,11 +586,15 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://c.evidon.com/*"
+                "string": "https://dev.betrad.com/*"
               },
               {
                 "type": 1,
                 "string": "https://staging.betrad.com/*"
+              },
+              {
+                "type": 1,
+                "string": "https://c.evidon.com/*"
               }
             ]
           }
@@ -953,6 +968,45 @@ ___WEB_PERMISSIONS___
                     "boolean": false
                   }
                 ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "evidon.activeTranslationsLangCode"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
               }
             ]
           }
@@ -1228,3 +1282,4 @@ setup: ''
 ___NOTES___
 
 Created on 6/7/2024, 4:45:02 PM
+

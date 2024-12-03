@@ -508,7 +508,14 @@ function setDefaultConsent() {
         if (!regions.length) allRegionsRecord = true;
         setDefaultConsentState(consentState);
     });
+    gtagSet({ 'ads_data_redaction': true, 'developer_id': 'dOGRkZj' });
 
+    if (data.enableUrlPassthrough) {
+        gtagSet({ 'url_passthrough': true });
+    }
+    else {
+        gtagSet({ 'url_passthrough': false });
+    }
     if (!allRegionsRecord) setDeniedConsentValuesForAllRegions();
 }
 
@@ -1281,5 +1288,6 @@ setup: ''
 
 ___NOTES___
 
-Created on 6/7/2024, 4:45:02 PM
+Created on 3/12/2024, 4:45:02 PM
+
 

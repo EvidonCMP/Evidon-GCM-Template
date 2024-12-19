@@ -5,6 +5,7 @@ Template Gallery Developer Terms of Service available at
 https://developers.google.com/tag-manager/gallery-tos (or such other URL as
 Google may provide), as modified from time to time.
 
+
 ___INFO___
 
 {
@@ -454,12 +455,8 @@ const callLater = require("callLater");
 const stagingNotice= data.nonProductionNotice;
 const activeTranslationsLangCode  = data.activeTranslationsLangCode ;
 
-/* --- Constants --- */
-const urls = {
-    production: "https://c.evidon.com",
-    staging: "https://staging.betrad.com",
-};
-const url = [7654, 6914].indexOf(data.companyId) !== -1 ? urls.staging : urls.production;
+var url = "https://c.evidon.com";
+if(companyId == 7654 || companyId == 6914 || companyId == 6657) url = "https://staging.betrad.com";
 
 const debug = url + "/gtm/debug.js";
 const evidonCDN = url + "/gtm/evidon-loader.js";

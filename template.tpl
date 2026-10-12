@@ -481,6 +481,8 @@ const setDeniedConsentValuesForAllRegions = () => {
         analytics_storage: 'denied',
         ad_user_data: 'denied',
         ad_personalization: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
         wait_for_update: 500,
     });
 };
@@ -499,6 +501,8 @@ function setDefaultConsent() {
             analytics_storage: settings.analyticsStorage,
             ad_user_data: settings.adUserData,
             ad_personalization: settings.adPersonalization,
+            functionality_storage: 'granted',
+            security_storage: 'granted',
             wait_for_update: 500,
             region: regions.length ? regions : undefined,
         };

@@ -10,9 +10,8 @@ ___INFO___
 
 {
   "type": "TAG",
-  "id": "cvt_temp_public_id",
+  "id": "cvt_KTR3Q",
   "version": 1,
-  "securityGroups": [],
   "displayName": "Evidon -  Universal Consent Platform",
   "brand": {
     "id": "github.com_EvidonCMP",
@@ -22,7 +21,8 @@ ___INFO___
   "description": "Universal Consent Platform is a CMP provided by Crownpeak. Data is collected for personalization and analytic purposes. For more information please visit: https://business.safety.google/privacy.",
   "containerContexts": [
     "WEB"
-  ]
+  ],
+  "securityGroups": []
 }
 
 
@@ -1217,6 +1217,68 @@ ___WEB_PERMISSIONS___
                   {
                     "type": 1,
                     "string": "regions"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "consentType"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "functionality_storage"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "consentType"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "security_storage"
                   },
                   {
                     "type": 8,
